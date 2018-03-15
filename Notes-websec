@@ -1,0 +1,14 @@
+1) Never trust user data
+2) Never put user data in these places:
+	a) Directly in script   : <script> <%-userData %> </script>
+	b) In a html comment    : <!----- <%- userData %> ---->
+	c) In an attribute name : <iframe <%- userData %>="myValue: />
+	d) In a tag name		: <<%- userData %> class="myEl" >
+	e) In a <Style> block	: <style> <%- userData %> </style>
+3) Sanitize User data
+	Escape user data before putting it in html
+	a) Sanitize before data is persistent
+	b) Sanitize before data is rendered on screen
+	<script> alert("hi")</script> => "%3Cscript%3Ealert( 'hi' )%3C%2Fscript%3E"
+	Most view libraries do it automatically
+
