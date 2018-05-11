@@ -40,7 +40,8 @@ app.use(csp({
     styleSrc: ["'self'", "'unsafe-inline'"],
     scriptSrc: ["'self'"],
     fontSrc: ["data:"]
-  }
+  },
+  reportOnly: true
 }));
 ///////////////////////////////////////////
 
